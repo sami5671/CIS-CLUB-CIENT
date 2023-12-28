@@ -1,24 +1,47 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/Images/logo2.jpeg";
+import { FaHome } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
+import { GrYoga } from "react-icons/gr";
+import { MdSportsCricket } from "react-icons/md";
+import { GiBrain } from "react-icons/gi";
 
 const Navbar = () => {
   // =========================navigation here =========================
   const navOptions = (
     <>
       <li className="glow">
-        <Link to="/">Home</Link>
+        <Link to="/">
+          <div className="flex items-center gap-1">
+            Home
+            <FaHome />
+          </div>
+        </Link>
       </li>
       <li className="glow">
-        <Link to="/">Programming</Link>
+        <Link to="/">
+          <div className="flex items-center gap-1">
+            Programming
+            <FaCode />
+          </div>
+        </Link>
       </li>
       <li className="glow">
-        <Link to="/">Cultural</Link>
+        <Link to="/">
+          <div className="flex items-center gap-1">
+            Cultural <GrYoga />
+          </div>
+        </Link>
       </li>
       <li className="glow">
-        <Link to="/">Sports</Link>
+        <Link to="/">
+          <div className="flex items-center gap-1">
+            Sports <MdSportsCricket />
+          </div>
+        </Link>
       </li>
       <li className="glow">
-        <Link to="/">About Us</Link>
+        <Link to="/signup">signup</Link>
       </li>
     </>
   );
@@ -47,7 +70,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 text-black rounded-box w-52"
+              className="menu dropdown-content mt-2 z-[1] p-4 shadow bg-base-200 border-2 border-slate-500 text-black rounded-box w-52"
             >
               {navOptions}
               {/* <UserMenu></UserMenu> */}
@@ -57,13 +80,13 @@ const Navbar = () => {
             <div className="">
               <a
                 href="/"
-                className="bg-gradient-to-r from-blue-500 to-purple-900 text-transparent bg-clip-text font-bold font-Rancho tracking-tight hover:tracking-wide lg:text-4xl ml-4 lg:ml-8"
+                className="bg-gradient-to-br from-orange-600 to-blue-400 text-transparent bg-clip-text font-bold font-Rancho tracking-tight hover:tracking-wide lg:text-4xl ml-4 lg:ml-8"
               >
                 CIS CLUB
               </a>
             </div>
             <div className="hidden sm:block">
-              <img className="w-[40px] h-[40px]" src={logo} alt="" />
+              <GiBrain className="w-[40px] h-[40px] text-orange-400" />
             </div>
           </div>
         </div>
