@@ -35,7 +35,7 @@ const WhatWeOffer = () => {
             />
           </figure>
           <div className="card-body">
-            <h2 className="text-3xl font-bold font-Rancho text-amber-400 uppercase border-b-2 border-b-amber-100">
+            <h2 className="text-2xl font-bold font-Rancho text-amber-400 uppercase border-b-2 border-b-amber-100">
               Programming Contest
             </h2>
             <p className="text-slate-500 leading-tight">
@@ -46,7 +46,7 @@ const WhatWeOffer = () => {
             </p>
             <div className="">
               <button className="px-8 py-2 bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
-                Buy Now
+                Explore
               </button>
             </div>
           </div>
@@ -61,7 +61,7 @@ const WhatWeOffer = () => {
             />
           </figure>
           <div className="card-body">
-            <h2 className="text-3xl font-bold font-Rancho text-amber-400 uppercase border-b-2 border-b-amber-100">
+            <h2 className="text-2xl font-bold font-Rancho text-amber-400 uppercase border-b-2 border-b-amber-100">
               Cultural Activities
             </h2>
             <p className="text-slate-500 leading-tight">
@@ -83,7 +83,7 @@ const WhatWeOffer = () => {
             <img src={sports} className="w-[500px] lg:h-[250px]" alt="image1" />
           </figure>
           <div className="card-body">
-            <h2 className="text-3xl font-bold font-Rancho text-amber-400 uppercase border-b-2 border-b-amber-100">
+            <h2 className="text-2xl font-bold font-Rancho text-amber-400 uppercase border-b-2 border-b-amber-100">
               Sports
             </h2>
             <p className="text-slate-500 leading-tight">
