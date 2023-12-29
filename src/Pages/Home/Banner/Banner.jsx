@@ -1,4 +1,7 @@
+import { FaFacebook, FaGlobe, FaTwitter } from "react-icons/fa";
 import banner from "../../../assets/Images/banner.jpg";
+import { IoLogoYoutube } from "react-icons/io";
+import { MdAddIcCall } from "react-icons/md";
 
 const Banner = () => {
   return (
@@ -22,6 +25,25 @@ const Banner = () => {
             fosters talent, and creates unforgettable moments. Elevate your
             passions at the CIS Club!
           </p>
+        </div>
+        <div className="absolute text-3xl hidden lg:block p-2">
+          <div className="gap-4 ">
+            <a href="">
+              <MdAddIcCall className="text-white mb-2 hover:text-green-400" />
+            </a>
+            <a href="https://daffodilvarsity.edu.bd/department/cis">
+              <FaGlobe className="text-white mb-2 hover:text-cyan-300" />
+            </a>
+            <a href="https://www.facebook.com/diucisclub">
+              <FaFacebook className="text-white mb-2 hover:text-blue-500" />
+            </a>
+            <a href="https://youtu.be/GCEqZdc3zUQ?si=0_4ihickzyn_d2oI">
+              <IoLogoYoutube className="text-white hover:text-red-600" />
+            </a>
+            <a href="">
+              <FaTwitter className="text-white mt-2 hover:text-cyan-500" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

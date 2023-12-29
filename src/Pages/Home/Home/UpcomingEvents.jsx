@@ -9,6 +9,7 @@ const UpcomingEvents = () => {
           subHeading={"Grab the Opportunity & take Reward"}
         ></SectionTitle>
       </section>
+
       {/* bg-gradient-to-l from-amber-200 to-purple-200 */}
       <section className="mt-24 bg-slate-50">
         {/* event 1 */}
