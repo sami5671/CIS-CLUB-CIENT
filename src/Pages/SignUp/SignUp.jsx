@@ -22,7 +22,7 @@ const SignUp = () => {
         <TabPanel>
           <div className="hero">
             <div className="hero-content flex-col lg:flex-row-reverse -mt-12">
-              <div className="flex-shrink-0 w-full border-2 border-amber-800 shadow-2xl p-2 mt-16 lg:px-28">
+              <div className="flex-shrink-0 w-full shadow-2xl p-2 mt-16 lg:px-28">
                 {/* ============ */}
                 <div className="px-8 mt-8">
                   <div>

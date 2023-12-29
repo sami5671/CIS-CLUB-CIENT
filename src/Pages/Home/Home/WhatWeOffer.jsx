@@ -1,6 +1,6 @@
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import programming from "../../../assets/Others/Programming.jpg";
-import cultural from "../../../assets/Others/cultural.jpg";
+import programming from "../../../assets/Others/Programming1.jpg";
+import cultural from "../../../assets/Others/cultural2.jpg";
 import sports from "../../../assets/Others/sports.jpg";
 
 const WhatWeOffer = () => {
@@ -26,7 +26,7 @@ const WhatWeOffer = () => {
       {/* card section */}
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 px-4 lg:px-32">
         {/* card 1  */}
-        <div className="card shadow-2xl   transition ease-in-out delay-300 hover:-translate-y-1 hover:scale-110 duration-300">
+        <div className="card shadow-2xl transition ease-in-out delay-300 hover:-translate-y-1 hover:scale-110 duration-300">
           <figure>
             <img
               src={programming}

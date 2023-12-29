@@ -6,7 +6,7 @@ const Login = () => {
     <>
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="flex-shrink-0 w-full mt-16 border-2 border-amber-800 shadow-2xl lg:px-28">
+          <div className="flex-shrink-0 w-full mt-16  shadow-2xl lg:px-28">
             {/* ============ */}
             <div className="px-8 mt-8">
               <div>

@@ -9,8 +9,8 @@ const UpcomingEvents = () => {
           subHeading={"Grab the Opportunity & take Reward"}
         ></SectionTitle>
       </section>
-
-      <section className="mt-24">
+      {/* bg-gradient-to-l from-amber-200 to-purple-200 */}
+      <section className="mt-24 bg-slate-50">
         {/* event 1 */}
         <div className="flex gap-4 transition ease-in-out delay-300 hover:-translate-y-1 hover:scale-90 duration-300">
           <div className="p-4 lg:px-12 lg:py-4 text-white lg:text-2xl font-bold bg-gradient-to-br from-purple-800 to-blue-500">

@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import MemberShipPolicy from "./MemberShipPolicy";
 import UpcomingEvents from "./UpcomingEvents";
 import WhatWeOffer from "./WhatWeOffer";
 
@@ -10,6 +11,7 @@ const Home = () => {
         <Banner></Banner>
         <WhatWeOffer></WhatWeOffer>
         <UpcomingEvents></UpcomingEvents>
+        <MemberShipPolicy></MemberShipPolicy>
       </div>
     </>
   );
