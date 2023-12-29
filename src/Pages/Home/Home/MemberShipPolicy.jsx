@@ -21,7 +21,7 @@ const MemberShipPolicy = () => {
               to limitless possibilities awaits – seize the opportunity with CIS
               Club today!
             </p>
-            <button className="px-8 mt-4 py-2 bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
+            <button className="px-8 mt-4 py-2 border-b-4 border-b-orange-400 bg-amber-400  font-bold border-2 rounded-lg text-white hover:bg-white hover:text-black cursor-pointer">
               GET $200 BDT
             </button>
           </div>

@@ -45,7 +45,7 @@ const WhatWeOffer = () => {
               excellence. Join now!
             </p>
             <div className="">
-              <button className="px-8 py-2 bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
+              <button className="px-8 py-2 border-b-4 border-b-orange-400 rounded-lg bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
                 Explore
               </button>
             </div>
@@ -71,7 +71,7 @@ const WhatWeOffer = () => {
               community and understanding.
             </p>
             <div className="">
-              <button className="px-8 py-2 bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
+              <button className="px-8 py-2 border-b-4 border-b-orange-400 rounded-lg bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
                 Explore
               </button>
             </div>
@@ -93,7 +93,7 @@ const WhatWeOffer = () => {
               community.
             </p>
             <div className="">
-              <button className="px-8 font-bold py-2 bg-amber-400 border-2 text-white hover:bg-white hover:text-black cursor-pointer">
+              <button className="px-8 border-b-4 border-b-orange-400 font-bold rounded-lg py-2 bg-amber-400 border-2 text-white hover:bg-white hover:text-black cursor-pointer">
                 Explore
               </button>
             </div>
