@@ -1,16 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/Images/logo2.jpeg";
 import { FaHome, FaUserLock } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { GrYoga } from "react-icons/gr";
 import { MdDashboard, MdSportsCricket } from "react-icons/md";
 import { GiBrain } from "react-icons/gi";
 import UseAuth from "../../Hooks/UseAuth";
+import UseAdmin from "../../Hooks/UseAdmin";
 
 const Navbar = () => {
   // =================================================================
 
   const { user, logOut } = UseAuth();
+  const [isAdmin] = UseAdmin();
+
   const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
@@ -52,7 +54,7 @@ const Navbar = () => {
           </div>
         </Link>
       </li>
-      {user ? (
+      {isAdmin ? (
         <>
           <li className="glow">
             <Link to="/dashboard">
