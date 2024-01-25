@@ -16,13 +16,13 @@ const MemberShipPolicy = () => {
               Enjoy boundless access to CIS Programming Practice led by industry
               experts. Sharpen your skills and make meaningful contributions to
               our vibrant cultural and sports community. All this, for an
-              incredibly affordable membership fee of only 200 BDT. Join us in
-              the journey of learning, innovation, and camaraderie. Your gateway
-              to limitless possibilities awaits – seize the opportunity with CIS
+              incredibly affordable membership fee of only 100. Join us in the
+              journey of learning, innovation, and camaraderie. Your gateway to
+              limitless possibilities awaits – seize the opportunity with CIS
               Club today!
             </p>
             <button className="px-8 mt-4 py-2 border-b-4 border-b-orange-400 bg-amber-400  font-bold border-2 rounded-lg text-white hover:bg-white hover:text-black cursor-pointer">
-              GET $200 BDT
+              JOIN US
             </button>
           </div>
 

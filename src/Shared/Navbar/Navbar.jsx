@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/Images/logo2.jpeg";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaUserLock } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { GrYoga } from "react-icons/gr";
-import { MdSportsCricket } from "react-icons/md";
+import { MdDashboard, MdSportsCricket } from "react-icons/md";
 import { GiBrain } from "react-icons/gi";
 
 const Navbar = () => {
@@ -41,7 +41,19 @@ const Navbar = () => {
         </Link>
       </li>
       <li className="glow">
-        <Link to="/signup">signup</Link>
+        <Link to="/dashboard">
+          <div className="flex items-center gap-1">
+            Dashboard <MdDashboard />
+          </div>
+        </Link>
+      </li>
+      <li className="glow border-2 border-orange-300 px-4 hover:bg-orange-300 hover:text-white">
+        <Link to="/signup">
+          <div className="flex items-center gap-1">
+            Login
+            <FaUserLock />
+          </div>
+        </Link>
       </li>
     </>
   );
