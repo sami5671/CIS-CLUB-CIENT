@@ -1,11 +1,105 @@
-import { Link } from "react-router-dom";
-import { FaGooglePlusG } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Login from "../Login/Login";
+import useAxiosPublic from "./../../Hooks/UseAxiosPublic";
+import UseAuth from "./../../Hooks/UseAuth";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import GoogleLogin from "../../Components/GoogleLogin";
+import GithubLogin from "../../Components/GithubLogin";
 const SignUp = () => {
+  // =================================================================
+  const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+  const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
+  // ----------------------------------------------------------------
+  const axiosPublic = useAxiosPublic();
+  const { createUser, updateUserProfile } = UseAuth();
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const isPasswordValid = (password) => {
+    // Add your password validation logic here
+    // For example: at least one uppercase, one lowercase, and one special character
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+    return (
+      uppercaseRegex.test(password) &&
+      lowercaseRegex.test(password) &&
+      specialCharRegex.test(password)
+    );
+  };
+
+  const onSubmit = async (data) => {
+    const imageFile = { image: data.photoURL[0] };
+    const imageRes = await axiosPublic.post(image_hosting_api, imageFile, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    });
+    const imageUrl = imageRes.data.data.display_url;
+
+    createUser(data.email, data.password)
+      .then((result) => {
+        const loggedUser = result.user;
+
+        updateUserProfile(data.name, imageUrl)
+          .then(() => {
+            const userInfo = {
+              name: data.name,
+              email: data.email,
+              photoURL: data.photoURL,
+            };
+
+            axiosPublic
+              .post("/users", userInfo)
+              .then((res) => {
+                if (res.data.insertedId) {
+                  reset();
+                  Swal.fire("User created successfully");
+                  navigate("/");
+                } else {
+                  Swal.fire("Error creating user entry in the database");
+                }
+              })
+              .catch((error) => {
+                console.error("Error creating user entry:", error.message);
+                Swal.fire({
+                  icon: "error",
+                  title: "Error",
+                  text: error.message,
+                });
+              });
+          })
+          .catch((error) => {
+            console.error("Error updating user profile:", error.message);
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: error.message,
+            });
+          });
+      })
+      .catch((error) => {
+        console.error("Error creating user:", error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: error.message,
+        });
+      });
+  };
+  // =================================================================
   return (
     <>
       <h1 className="text-white mb-11">page</h1>
@@ -34,12 +128,8 @@ const SignUp = () => {
                     </p>
                   </div>
                   <div className="flex justify-center gap-6 mt-6">
-                    <p className="border-2 text-4xl text-green-500 bg-slate-100 shadow-xl p-1">
-                      <FaGooglePlusG />
-                    </p>
-                    <p className="border-2 text-4xl bg-slate-200 shadow-xl p-1">
-                      <FaGithub />
-                    </p>
+                    <GoogleLogin></GoogleLogin>
+                    <GithubLogin></GithubLogin>
                     <p className="border-2 text-4xl text-blue-500 bg-slate-200 shadow-xl p-1">
                       <FaFacebookF />
                     </p>
@@ -49,7 +139,7 @@ const SignUp = () => {
                 <div className="divider mt-8">OR</div>
                 {/* ============= */}
 
-                <form className="card-body">
+                <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text font-bold text-slate-500">
@@ -58,14 +148,16 @@ const SignUp = () => {
                     </label>
                     <input
                       type="text"
-                      // {...register("name", { required: true })}
+                      {...register("name", { required: true })}
                       placeholder="name"
                       className="p-2 border-2"
                       required
                     />
-                    {/* {errors.name && ( */}
-                    <span className="text-red-400">name field is required</span>
-                    {/* )} */}
+                    {errors.name && (
+                      <span className="text-red-400">
+                        name field is required
+                      </span>
+                    )}
                   </div>
                   <div className="form-control">
                     <label className="label">
@@ -73,14 +165,14 @@ const SignUp = () => {
                     </label>
                     <input
                       type="file"
-                      // {...register("photoURL", { required: true })}
+                      {...register("photoURL", { required: true })}
                       placeholder="photo URL"
                       className="p-2 border-2"
                       required
                     />
-                    {/* {errors.photoURL && ( */}
-                    <span className="text-red-400">photoURL is required</span>
-                    {/* )} */}
+                    {errors.photoURL && (
+                      <span className="text-red-400">photoURL is required</span>
+                    )}
                   </div>
                   <div className="form-control">
                     <label className="label">
@@ -88,16 +180,16 @@ const SignUp = () => {
                     </label>
                     <input
                       type="email"
-                      // {...register("email", { required: true })}
+                      {...register("email", { required: true })}
                       placeholder="email"
                       className="p-2 border-2"
                       required
                     />
-                    {/* {errors.email && ( */}
-                    <span className="text-red-400">
-                      Email field is required
-                    </span>
-                    {/* )} */}
+                    {errors.email && (
+                      <span className="text-red-400">
+                        Email field is required
+                      </span>
+                    )}
                   </div>
                   <div className="form-control">
                     <label className="label">
@@ -105,21 +197,21 @@ const SignUp = () => {
                     </label>
                     <input
                       type="password"
-                      // {...register("password", {
-                      //   required: "Password is required",
-                      //   validate: (value) =>
-                      //     isPasswordValid(value) ||
-                      //     "Password must be one uppercase, one lowercase & one special character ",
-                      // })}
+                      {...register("password", {
+                        required: "Password is required",
+                        validate: (value) =>
+                          isPasswordValid(value) ||
+                          "Password must be one uppercase, one lowercase & one special character ",
+                      })}
                       placeholder="password"
                       className="p-2 border-2"
                       required
                     />
-                    {/* {errors.password && (
-                  <span className="text-red-400">
-                    {errors.password.message}
-                  </span>
-                )} */}
+                    {errors.password && (
+                      <span className="text-red-400">
+                        {errors.password.message}
+                      </span>
+                    )}
                     <label className="label">
                       <a href="#" className="label-text-alt link link-hover">
                         Forgot password?

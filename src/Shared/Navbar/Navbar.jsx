@@ -1,12 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/Images/logo2.jpeg";
 import { FaHome, FaUserLock } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { GrYoga } from "react-icons/gr";
 import { MdDashboard, MdSportsCricket } from "react-icons/md";
 import { GiBrain } from "react-icons/gi";
+import UseAuth from "../../Hooks/UseAuth";
 
 const Navbar = () => {
+  // =================================================================
+
+  const { user, logOut } = UseAuth();
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
+  };
   // =========================navigation here =========================
   const navOptions = (
     <>
@@ -40,21 +52,49 @@ const Navbar = () => {
           </div>
         </Link>
       </li>
-      <li className="glow">
-        <Link to="/dashboard">
-          <div className="flex items-center gap-1">
-            Dashboard <MdDashboard />
+      {user ? (
+        <>
+          <li className="glow">
+            <Link to="/dashboard">
+              <div className="flex items-center gap-1">
+                Dashboard <MdDashboard />
+              </div>
+            </Link>
+          </li>
+        </>
+      ) : (
+        " "
+      )}
+      {user ? (
+        <>
+          <li className="glow border-2 border-orange-300 px-4 hover:bg-orange-300 hover:text-white">
+            <Link to="/signup">
+              <div className="flex items-center gap-1">
+                <span onClick={handleLogOut}> LogOut</span>
+                <FaUserLock />
+              </div>
+            </Link>
+          </li>
+          <div className="">
+            <img
+              alt="photo"
+              className="rounded-full w-[32px] h-[32px]"
+              src={user?.photoURL}
+            />
           </div>
-        </Link>
-      </li>
-      <li className="glow border-2 border-orange-300 px-4 hover:bg-orange-300 hover:text-white">
-        <Link to="/signup">
-          <div className="flex items-center gap-1">
-            Login
-            <FaUserLock />
-          </div>
-        </Link>
-      </li>
+        </>
+      ) : (
+        <>
+          <li className="glow border-2 border-orange-300 px-4 hover:bg-orange-300 hover:text-white">
+            <Link to="/signup">
+              <div className="flex items-center gap-1">
+                Login
+                <FaUserLock />
+              </div>
+            </Link>
+          </li>
+        </>
+      )}
     </>
   );
   // =================================================================

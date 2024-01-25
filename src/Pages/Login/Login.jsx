@@ -1,7 +1,34 @@
-import { FaFacebookF, FaGithub, FaGooglePlusG } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaFacebookF } from "react-icons/fa";
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import GoogleLogin from "../../Components/GoogleLogin";
+import GithubLogin from "../../Components/GithubLogin";
+import UseAuth from "../../Hooks/UseAuth";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { signIn } = UseAuth();
+  const location = useLocation();
+  const [error, setError] = useState(null);
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    try {
+      const result = await signIn(email, password);
+      const user = result.user;
+      navigate("/", { state: { form: location } });
+      console.log(user);
+    } catch (error) {
+      // Handle login error
+      console.error(error);
+      setError("Invalid email or password. Please try again."); // Set error state
+    }
+  };
+
   return (
     <>
       <div className="hero">
@@ -18,13 +45,8 @@ const Login = () => {
                 </p>
               </div>
               <div className="flex justify-center gap-6 mt-6">
-                <p className="border-2 border-red-400 text-4xl text-green-500 bg-slate-100 shadow-xl p-1">
-                  <FaGooglePlusG />
-                </p>
-
-                <p className="border-2 text-4xl bg-slate-200 shadow-xl p-1">
-                  <FaGithub />
-                </p>
+                <GoogleLogin></GoogleLogin>
+                <GithubLogin></GithubLogin>
                 <p className="border-2 text-4xl text-blue-500 bg-slate-200 shadow-xl p-1">
                   <FaFacebookF />
                 </p>
@@ -34,7 +56,7 @@ const Login = () => {
             <div className="divider mt-8">OR</div>
             {/* ============= */}
 
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold text-slate-500">
@@ -43,14 +65,11 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
-                  // {...register("email", { required: true })}
+                  name="email"
                   placeholder="email"
                   className="p-2 border-2"
                   required
                 />
-                {/* {errors.email && ( */}
-                <span className="text-red-400">Email field is required</span>
-                {/* )} */}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -60,21 +79,12 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
-                  // {...register("password", {
-                  //   required: "Password is required",
-                  //   validate: (value) =>
-                  //     isPasswordValid(value) ||
-                  //     "Password must be one uppercase, one lowercase & one special character ",
-                  // })}
+                  name="password"
                   placeholder="password"
                   className="p-2 border-2"
                   required
                 />
-                {/* {errors.password && (
-                  <span className="text-red-400">
-                    {errors.password.message}
-                  </span>
-                )} */}
+                {error && <span className="text-red-400">{error}</span>}
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
