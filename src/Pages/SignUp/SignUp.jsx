@@ -114,7 +114,7 @@ const SignUp = () => {
           <Login />
         </TabPanel>
         <TabPanel>
-          <div className="hero">
+          <div className=" bg-slate-900">
             <div className="hero-content flex-col lg:flex-row-reverse -mt-12">
               <div className="flex-shrink-0 w-full shadow-2xl p-2 mt-16 lg:px-28">
                 {/* ============ */}
@@ -139,7 +139,7 @@ const SignUp = () => {
                 <div className="divider mt-8">OR</div>
                 {/* ============= */}
 
-                <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                <form onSubmit={handleSubmit(onSubmit)} className="text-white">
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text font-bold text-slate-500">
@@ -150,7 +150,7 @@ const SignUp = () => {
                       type="text"
                       {...register("name", { required: true })}
                       placeholder="name"
-                      className="p-2 border-2"
+                      className="p-2 border-2 text-slate-800"
                       required
                     />
                     {errors.name && (
@@ -161,13 +161,15 @@ const SignUp = () => {
                   </div>
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Photo Url</span>
+                      <span className="label-text font-bold text-slate-500">
+                        Choose Your Photo*
+                      </span>
                     </label>
                     <input
                       type="file"
                       {...register("photoURL", { required: true })}
                       placeholder="photo URL"
-                      className="p-2 border-2"
+                      className="p-2 border-2 text-lime-400"
                       required
                     />
                     {errors.photoURL && (
@@ -176,13 +178,15 @@ const SignUp = () => {
                   </div>
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Email</span>
+                      <span className="label-text font-bold text-slate-500">
+                        Email
+                      </span>
                     </label>
                     <input
                       type="email"
                       {...register("email", { required: true })}
                       placeholder="email"
-                      className="p-2 border-2"
+                      className="p-2 border-2 text-slate-800"
                       required
                     />
                     {errors.email && (
@@ -193,7 +197,9 @@ const SignUp = () => {
                   </div>
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Password</span>
+                      <span className="label-text font-bold text-slate-500">
+                        Password
+                      </span>
                     </label>
                     <input
                       type="password"
@@ -204,7 +210,7 @@ const SignUp = () => {
                           "Password must be one uppercase, one lowercase & one special character ",
                       })}
                       placeholder="password"
-                      className="p-2 border-2"
+                      className="p-2 border-2 text-slate-800"
                       required
                     />
                     {errors.password && (

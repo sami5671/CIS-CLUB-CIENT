@@ -33,7 +33,7 @@ const Navbar = () => {
         </Link>
       </li>
       <li className="glow">
-        <Link to="/">
+        <Link to="/programming">
           <div className="flex items-center gap-1">
             Programming
             <FaCode />

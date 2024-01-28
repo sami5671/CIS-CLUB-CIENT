@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="hero">
+      <div className=" bg-slate-900">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="flex-shrink-0 w-full mt-16  shadow-2xl lg:px-28">
             {/* ============ */}
@@ -53,10 +53,14 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="divider mt-8">OR</div>
-            {/* ============= */}
+            <div className="divider mt-8 text-white">OR</div>
 
-            <form onSubmit={handleLogin} className="card-body">
+            {/* ============= */}
+            <hr />
+            <form
+              onSubmit={handleLogin}
+              className="card-body text-white border-2 mt-4"
+            >
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold text-slate-500">
@@ -67,7 +71,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="email"
-                  className="p-2 border-2"
+                  className="p-2 border-2 text-black"
                   required
                 />
               </div>
@@ -81,12 +85,12 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="p-2 border-2"
+                  className="p-2 border-2 text-black"
                   required
                 />
                 {error && <span className="text-red-400">{error}</span>}
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                <label className="">
+                  <a href="#" className="text-slate-400 hover:underline">
                     Forgot password?
                   </a>
                 </label>

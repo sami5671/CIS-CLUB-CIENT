@@ -7,7 +7,7 @@ import { FaGlobe } from "react-icons/fa6";
 const Footer = () => {
   return (
     <>
-      <footer className="footer p-10 bg-slate-700 text-white mt-12">
+      <footer className="footer p-10 bg-slate-900 text-white mt-12">
         <nav>
           <header className="footer-title">Services</header>
           <a className="link link-hover">Branding</a>
@@ -34,7 +34,7 @@ const Footer = () => {
           <img src={logo} className="w-[40px] h-[40px]" alt="" />
           <p className="text-slate-500 ">
             Daffodil International University (CIS CLUB). <br />
-            @All Rights Reserved by CIS CLUB & Sami-15th
+            @All Rights Reserved by CIS CLUB & Developed By Sami-15th
           </p>
         </aside>
         <p className="text-slate-500 mt-12"></p>

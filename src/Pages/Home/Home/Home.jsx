@@ -1,4 +1,4 @@
-import Banner from "../Banner/Banner";
+import Bannerr from "../Banner/Bannerr";
 import Gallery from "./Gallery";
 import MemberShipPolicy from "./MemberShipPolicy";
 import Testimonial from "./Testimonial/Testimonial";
@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <div>
         <h1 className="text-white mb-10">home</h1>
-        <Banner></Banner>
+        <Bannerr></Bannerr>
         <WhatWeOffer></WhatWeOffer>
         <UpcomingEvents></UpcomingEvents>
         <MemberShipPolicy></MemberShipPolicy>

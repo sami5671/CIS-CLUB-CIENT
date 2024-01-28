@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-
 import UseAuth from "../Hooks/UseAuth";
 import { FaGooglePlusG } from "react-icons/fa";
 import useAxiosPublic from "../Hooks/UseAxiosPublic";

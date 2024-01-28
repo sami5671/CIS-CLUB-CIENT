@@ -1,5 +1,6 @@
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import membership from "../../../assets/Others/membership.jpeg";
+import { FaUserSecret } from "react-icons/fa";
 const MemberShipPolicy = () => {
   return (
     <div className="mt-24">
@@ -22,7 +23,10 @@ const MemberShipPolicy = () => {
               Club today!
             </p>
             <button className="px-8 mt-4 py-2 border-b-4 border-b-orange-400 bg-amber-400  font-bold border-2 rounded-lg text-white hover:bg-white hover:text-black cursor-pointer">
-              JOIN US
+              <span className="flex items-center gap-2">
+                <FaUserSecret className="lg:text-2xl" />
+                JOIN US
+              </span>
             </button>
           </div>
 

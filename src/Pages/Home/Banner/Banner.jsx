@@ -11,7 +11,6 @@ const Banner = () => {
         src={banner}
         alt="Banner"
       />
-
       <div className="absolute bg-slate-900 bg-opacity-60 w-full h-full rounded-md flex flex-col justify-center px-4">
         <div className="lg:px-44">
           <h2 className="text-2xl lg:text-7xl mt-2 font-bold mb-4 lg:mb-10 text-white">

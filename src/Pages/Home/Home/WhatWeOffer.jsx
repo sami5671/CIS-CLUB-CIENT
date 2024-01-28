@@ -1,3 +1,4 @@
+import { FaWpexplorer } from "react-icons/fa";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import programming from "../../../assets/Others/Programming1.jpg";
 import cultural from "../../../assets/Others/cultural2.jpg";
@@ -36,7 +37,7 @@ const WhatWeOffer = () => {
           </figure>
           <div className="card-body">
             <h2 className="text-2xl font-bold font-Rancho text-amber-400 uppercase border-b-2 border-b-amber-100">
-              Programming Contest
+              Programming
             </h2>
             <p className="text-slate-500 leading-tight">
               CIS Club Programming Contest: Unleash your coding prowess in our
@@ -45,8 +46,11 @@ const WhatWeOffer = () => {
               excellence. Join now!
             </p>
             <div className="">
-              <button className="px-8 py-2 border-b-4 border-b-orange-400 rounded-lg bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
-                Explore
+              <button className="px-6 py-2 border-b-4 border-b-orange-400 rounded-lg bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
+                <span className="flex items-center gap-1">
+                  <FaWpexplorer className="lg:text-xl font-bold" />
+                  Explore
+                </span>
               </button>
             </div>
           </div>
@@ -71,8 +75,11 @@ const WhatWeOffer = () => {
               community and understanding.
             </p>
             <div className="">
-              <button className="px-8 py-2 border-b-4 border-b-orange-400 rounded-lg bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
-                Explore
+              <button className="px-6 py-2 border-b-4 border-b-orange-400 rounded-lg bg-amber-400 font-bold border-2 text-white hover:bg-white hover:text-black cursor-pointer">
+                <span className="flex items-center gap-1">
+                  <FaWpexplorer className="lg:text-xl font-bold" />
+                  Explore
+                </span>
               </button>
             </div>
           </div>
@@ -93,8 +100,11 @@ const WhatWeOffer = () => {
               community.
             </p>
             <div className="">
-              <button className="px-8 border-b-4 border-b-orange-400 font-bold rounded-lg py-2 bg-amber-400 border-2 text-white hover:bg-white hover:text-black cursor-pointer">
-                Explore
+              <button className="px-6 border-b-4 border-b-orange-400 font-bold rounded-lg py-2 bg-amber-400 border-2 text-white hover:bg-white hover:text-black cursor-pointer">
+                <span className="flex items-center gap-1">
+                  <FaWpexplorer className="lg:text-xl font-bold" />
+                  Explore
+                </span>
               </button>
             </div>
           </div>
