@@ -1,45 +1,41 @@
-import SectionTitle from "./../../Components/SectionTitle/SectionTitle";
-import img from "../../assets/Programming/c.png";
-import { CgNotes } from "react-icons/cg";
-import { IoBarChartOutline } from "react-icons/io5";
+import { useEffect, useState } from "react";
+import useAxiosPublic from "../../Hooks/UseAxiosPublic";
+import CardDetails from "./CardDetails";
+import SectionTitleProgramming from "./../../Components/SectionTitle/SectionTitleProgramming";
 
 const Programming = () => {
-  return (
-    <section className="bg-slate-900">
-      <div className="mb-12">hello</div>
+  // =================================================================
+  const axiosPublic = useAxiosPublic();
+  const [cards, setCards] = useState([]);
 
-      <SectionTitle
-        heading={"Foundation of Programming"}
+  // useEffect(() => {
+  //   axiosPublic.get("/programmingCard").then((res) => {
+  //     setCards(res.data);
+  //   });
+  // }, [axiosPublic]);
+
+  useEffect(() => {
+    fetch("card.json")
+      .then((res) => res.json())
+      .then((data) => setCards(data));
+  }, []);
+
+  console.log(cards);
+  // =================================================================
+  return (
+    <section className="">
+      <div className="mb-16 text-white">hello</div>
+
+      <SectionTitleProgramming
         subheading={"Enhance Your Knowledge"}
-      ></SectionTitle>
+        heading={"Foundation of Programming"}
+      ></SectionTitleProgramming>
 
       {/* card */}
-
-      <div>
-        <div className="w-44 h-12 bg-lime-200"></div>
-        <div>
-          <img src={img} className="w-[40px] h-[40px]" alt="" />
-        </div>
-        <div>
-          <h1>Practice C++</h1>
-          <p>
-            Practice problems of C++, the language most used for DSA and low
-            level programming
-          </p>
-          <hr />
-          <p>
-            <span>
-              <CgNotes />
-              67 Problems
-            </span>
-          </p>
-          <p>
-            <span>
-              <IoBarChartOutline />
-              Beginner level
-            </span>
-          </p>
-        </div>
+      <div className="grid grid-cols-4 gap-1 lg:px-20">
+        {cards.map((card) => (
+          <CardDetails key={card._id} card={card}></CardDetails>
+        ))}
       </div>
     </section>
   );

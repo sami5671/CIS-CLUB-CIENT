@@ -1,0 +1,65 @@
+[
+  {
+    "img": "https://i.ibb.co/0Bn0RDt/c.png",
+    "name": "Practice C++",
+    "description": "Practice problems of C++, the language most used for DSA and low level programming",
+    "problem": "67 Problems",
+    "level": "Beginner Level",
+    "color": "#1c3faa",
+    "link": "https://www.codechef.com/practice/cpp"
+  },
+  {
+    "img": "https://i.ibb.co/QJCQRtd/image-downloader-1706548052489.jpg",
+    "name": "Practice Go",
+    "description": "Learn the basics of Go programming with ease in this interactive and practical course. This course will provide a good",
+    "problem": "33 Problems",
+    "level": "Beginner Level",
+    "color": "#1c3faa",
+    "link": "https://www.codechef.com/practice/go"
+  },
+  {
+    "img": "https://i.ibb.co/nMy3JZc/image-downloader-1706548679675.png",
+    "name": "Practice JAVA",
+    "description": "Practice problems of C++, the language most used for DSA and low level programming",
+    "problem": "67 Problems",
+    "level": "Beginner Level",
+    "color": "#1c3faa",
+    "link": "https://www.codechef.com/practice/java"
+  },
+  {
+    "img": "https://i.ibb.co/GFDtqR0/image-downloader-1706544977197.png",
+    "name": "Practice Python",
+    "description": "Practice Java problems and get used to writing object oriented and robust code.",
+    "problem": "68 Problems",
+    "level": "Beginner Level",
+    "color": "#1c3faa",
+    "link": "https://www.codechef.com/practice/python"
+  },
+  {
+    "img": "https://i.ibb.co/J5zQJyN/image-downloader-1706548974273-jpg.png",
+    "name": "Practice Rust",
+    "description": "Practice problems of C++, the language most used for DSA and low level programming",
+    "problem": "67 Problem",
+    "level": "Beginner Level",
+    "color": "#1c3faa",
+    "link": "https://www.codechef.com/practice/rust"
+  },
+  {
+    "img": "https://i.ibb.co/qWXZ1sD/image-downloader-1706545080826-jpg.png",
+    "name": "Practice C#",
+    "description": "Learn the basics of C# programming with ease in this interactive and practical course.",
+    "problem": "33 Problem",
+    "level": "Beginner Level",
+    "color": "#1c3faa",
+    "link": "https://www.codechef.com/practice/c#"
+  },
+  {
+    "img": "https://i.ibb.co/zJZGcsH/image-downloader-1706545020626-jpg.png",
+    "name": "Practice C",
+    "description": "Practice C problems, a great starting point if you really want to understand fundamental",
+    "problem": "33 Problem",
+    "level": "Beginner Level",
+    "color": "#1c3faa",
+    "link": "https://www.codechef.com/practice/c"
+  }
+]
